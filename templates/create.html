@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+  <head>
+    <meta charset="utf-8">
+    <title>New Lit Byte</title>
+  </head>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body {
+  background-color: gray;
+}
+.new {
+  font-size:20px;
+}
+.co{
+  font-size:20px;
+  color: white;
+}
+</style>
+    <h1>New Lit Byte</h1>
+
+    <form action="{{url_for('posted')}}" method="post">
+      {{form.hidden_tag()}}
+      {{form.title.label( class='new' )}} {{form.title}} <br>
+      {{form.body.label( class='new' )}} <br> {{form.body}} <br>
+      {{form.formoflit.label( class='new' )}} <br>
+      {{form.formoflit(class='co')}} <br>
+      {{form.genre.label( class='new' )}} <br>
+      {{form.genre(class='co')}}
+      {{form.post()}}
+
+    </form>
+
+{% endblock %}
